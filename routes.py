@@ -1,3 +1,4 @@
+from flask import Flask, render_template
 from flask import Flask 
  
 app = Flask(__name__) 
@@ -5,7 +6,8 @@ app.config.from_object(__name__)
  
 @app.route('/') 
 def hello(): 
-   return 'Hello, World!' 
+   name = 'AJ' 
+   return render_template("index.html", value=name) 
 
 @app.route('/welcome') 
 
